@@ -7,6 +7,7 @@ using System.Data;
 using SIAC.Constantes;
 using SharpContent.ApplicationBlocks.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 
 
 namespace Reportes_Planeacion.Escuelas.Datos
@@ -272,8 +273,8 @@ namespace Reportes_Planeacion.Escuelas.Datos
                 Mi_SQL += "(";
                 Mi_SQL += "  '" + Datos.P_Giro_Id + "'";                                            //  1
                 Mi_SQL += ", '" + Datos.P_Dr_Registro["Nombre"].ToString() + "'";                 //  2
-                Mi_SQL += ",  " + Datos.P_Anio + "";                                                //  3
-                Mi_SQL += ",  " + Datos.P_Dr_Registro[Datos.P_Str_Nombre_Mes].ToString() + "";      //  4
+                Mi_SQL += ",  " + Convert.ToDouble(Datos.P_Anio).ToString(new CultureInfo("es-MX")) + "";//  3
+                Mi_SQL += ",  " + Convert.ToDouble(Datos.P_Dr_Registro[Datos.P_Str_Nombre_Mes].ToString()).ToString(new CultureInfo("es-MX")) + "";      //  4
                 Mi_SQL += ",  getdate()";                                                           //  5
                 Mi_SQL += ", '" + Datos.P_Str_Usuario + "'";                                        //  7
                 Mi_SQL += ")";
@@ -347,12 +348,13 @@ namespace Reportes_Planeacion.Escuelas.Datos
 
 
                 Mi_SQL = "update  Ope_Cor_Plan_Tomas_Escuelas set ";
-                Mi_SQL += "  " + Datos.P_Str_Nombre_Mes + " = " + Datos.P_Dr_Registro[Datos.P_Str_Nombre_Mes].ToString();
+                Mi_SQL += "  " + Datos.P_Str_Nombre_Mes + " = " + Convert.ToDouble(Datos.P_Dr_Registro[Datos.P_Str_Nombre_Mes].ToString()).ToString(new CultureInfo("es-MX"));
                 Mi_SQL += ", fecha_modifico = getdate()";
                 Mi_SQL += ", usuario_modifico = '" + Datos.P_Str_Usuario + "'";
                 Mi_SQL += " where id = '" + Datos.P_Id + "'";
                 Obj_Comando.CommandText = Mi_SQL;
                 Obj_Comando.ExecuteNonQuery();
+
 
                 #endregion Fin historico
 
@@ -472,8 +474,8 @@ namespace Reportes_Planeacion.Escuelas.Datos
                 Mi_SQL += "(";
                 Mi_SQL += "  '" + Datos.P_Giro_Id + "'";                                            //  1
                 Mi_SQL += ", '" + Datos.P_Dr_Registro["Nombre"].ToString() + "'";                 //  2
-                Mi_SQL += ",  " + Datos.P_Anio + "";                                                //  3
-                Mi_SQL += ",  " + Datos.P_Dr_Registro[Datos.P_Str_Nombre_Mes].ToString() + "";      //  4
+                Mi_SQL += ",  " + Convert.ToDouble(Datos.P_Anio).ToString(new CultureInfo("es-MX")) + "";//  3
+                Mi_SQL += ",  " + Convert.ToDouble(Datos.P_Dr_Registro[Datos.P_Str_Nombre_Mes].ToString()).ToString(new CultureInfo("es-MX")) + "";      //  4
                 Mi_SQL += ",  getdate()";                                                           //  5
                 Mi_SQL += ", '" + Datos.P_Str_Usuario + "'";                                        //  7
                 Mi_SQL += ")";
@@ -547,7 +549,7 @@ namespace Reportes_Planeacion.Escuelas.Datos
 
 
                 Mi_SQL = "update  Ope_Cor_Plan_Volumenes_Escuelas set ";
-                Mi_SQL += "  " + Datos.P_Str_Nombre_Mes + " = " + Datos.P_Dr_Registro[Datos.P_Str_Nombre_Mes].ToString();
+                Mi_SQL += "  " + Datos.P_Str_Nombre_Mes + " = " + Convert.ToDouble(Datos.P_Dr_Registro[Datos.P_Str_Nombre_Mes].ToString()).ToString(new CultureInfo("es-MX"));
                 Mi_SQL += ", fecha_modifico = getdate()";
                 Mi_SQL += ", usuario_modifico = '" + Datos.P_Str_Usuario + "'";
                 Mi_SQL += " where id = '" + Datos.P_Id + "'";

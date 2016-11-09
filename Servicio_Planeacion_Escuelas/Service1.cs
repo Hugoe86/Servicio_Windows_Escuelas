@@ -32,7 +32,7 @@ namespace Servicio_Planeacion_Escuelas
         {
             InitializeComponent(); 
             Tiempo = new Timer();
-            Tiempo.Interval = 900000; // 900000 = 15 minutos     // 600000 = 10 minutos  //  1200000 = 20 minutos    //  60000 = 1 munuto 
+            Tiempo.Interval = 60000; // 900000 = 15 minutos     // 600000 = 10 minutos  //  1200000 = 20 minutos    //  60000 = 1 munuto 
             Tiempo.Elapsed += new ElapsedEventHandler(Tiempo_Contador);
         }
         /////*******************************************************************************************************
