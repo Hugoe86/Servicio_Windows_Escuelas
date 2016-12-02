@@ -32,7 +32,7 @@ namespace Servicio_Planeacion_Escuelas
         {
             InitializeComponent(); 
             Tiempo = new Timer();
-            Tiempo.Interval = 60000; // 900000 = 15 minutos     // 600000 = 10 minutos  //  1200000 = 20 minutos    //  60000 = 1 munuto 
+            Tiempo.Interval = 600000; // 900000 = 15 minutos     // 600000 = 10 minutos  //  1200000 = 20 minutos    //  60000 = 1 munuto 
             Tiempo.Elapsed += new ElapsedEventHandler(Tiempo_Contador);
         }
         /////*******************************************************************************************************
@@ -83,7 +83,7 @@ namespace Servicio_Planeacion_Escuelas
             DateTime Dtime_Hora = DateTime.Now;
 
             //if (Dtime_Hora.Hour >= 18 && Dtime_Hora.Hour <= 19)
-            if (Dtime_Hora.Hour >= 18 && Dtime_Hora.Hour <= 19)
+            if (Dtime_Hora.Hour >= 10 && Dtime_Hora.Hour <= 19)
             {
                 Consultar_Informacion();
             }

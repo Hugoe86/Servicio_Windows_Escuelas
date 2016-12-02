@@ -276,7 +276,7 @@ namespace Reportes_Planeacion.Escuelas.Datos
                 Mi_SQL += ",  " + Convert.ToDouble(Datos.P_Anio).ToString(new CultureInfo("es-MX")) + "";//  3
                 Mi_SQL += ",  " + Convert.ToDouble(Datos.P_Dr_Registro[Datos.P_Str_Nombre_Mes].ToString()).ToString(new CultureInfo("es-MX")) + "";      //  4
                 Mi_SQL += ",  getdate()";                                                           //  5
-                Mi_SQL += ", '" + Datos.P_Str_Usuario + "'";                                        //  7
+                Mi_SQL += ", '" + Datos.P_Str_Usuario + "'";                                        //  6
                 Mi_SQL += ")";
 
                 Obj_Comando.CommandText = Mi_SQL;
@@ -477,7 +477,7 @@ namespace Reportes_Planeacion.Escuelas.Datos
                 Mi_SQL += ",  " + Convert.ToDouble(Datos.P_Anio).ToString(new CultureInfo("es-MX")) + "";//  3
                 Mi_SQL += ",  " + Convert.ToDouble(Datos.P_Dr_Registro[Datos.P_Str_Nombre_Mes].ToString()).ToString(new CultureInfo("es-MX")) + "";      //  4
                 Mi_SQL += ",  getdate()";                                                           //  5
-                Mi_SQL += ", '" + Datos.P_Str_Usuario + "'";                                        //  7
+                Mi_SQL += ", '" + Datos.P_Str_Usuario + "'";                                        //  6
                 Mi_SQL += ")";
 
                 Obj_Comando.CommandText = Mi_SQL;

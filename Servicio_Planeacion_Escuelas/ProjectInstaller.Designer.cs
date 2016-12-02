@@ -43,6 +43,7 @@
     "0 pm - 07:00 pm";
             this.serviceInstaller1.DisplayName = "Servicio Plan Escuelas *******************";
             this.serviceInstaller1.ServiceName = "Servicio_Planeacion_Escuelas";
+            this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 
